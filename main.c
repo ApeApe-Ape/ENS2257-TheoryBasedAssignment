@@ -1,6 +1,6 @@
 
 // for ENS2257/ENS6155 Lab Kits with ATmega328PB
-// Theory Based Assginment Task 1  
+// Theory Based Assignment Task 1  
 
 #define F_CPU 16000000UL
 
