@@ -1,0 +1,181 @@
+
+Lab3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001dc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000188  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000001dc  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000020c  2**2
+                  CONTENTS, READONLY
+  4 .debug_info   000008ea  00000000  00000000  0000024c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000086e  00000000  00000000  00000b36  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000001a6  00000000  00000000  000013a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    00000318  00000000  00000000  0000154a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 5a 00 	jmp	0xb4	; 0xb4 <__ctors_end>
+   4:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+   8:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+   c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  10:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  14:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  18:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  1c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  20:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  24:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  28:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  2c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  30:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  34:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  38:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  3c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  40:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  44:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  48:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  4c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  50:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  54:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  58:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  5c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  60:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  64:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  68:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  6c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  70:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  74:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  78:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  7c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  80:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  84:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  88:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  8c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  90:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  94:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  98:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  9c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  a0:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  a4:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  a8:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  ac:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  b0:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+
+000000b4 <__ctors_end>:
+  b4:	11 24       	eor	r1, r1
+  b6:	1f be       	out	0x3f, r1	; 63
+  b8:	cf ef       	ldi	r28, 0xFF	; 255
+  ba:	d8 e0       	ldi	r29, 0x08	; 8
+  bc:	de bf       	out	0x3e, r29	; 62
+  be:	cd bf       	out	0x3d, r28	; 61
+
+000000c0 <__do_copy_data>:
+  c0:	11 e0       	ldi	r17, 0x01	; 1
+  c2:	a0 e0       	ldi	r26, 0x00	; 0
+  c4:	b1 e0       	ldi	r27, 0x01	; 1
+  c6:	e8 e8       	ldi	r30, 0x88	; 136
+  c8:	f1 e0       	ldi	r31, 0x01	; 1
+  ca:	02 c0       	rjmp	.+4      	; 0xd0 <__do_copy_data+0x10>
+  cc:	05 90       	lpm	r0, Z+
+  ce:	0d 92       	st	X+, r0
+  d0:	a0 30       	cpi	r26, 0x00	; 0
+  d2:	b1 07       	cpc	r27, r17
+  d4:	d9 f7       	brne	.-10     	; 0xcc <__do_copy_data+0xc>
+  d6:	0e 94 b6 00 	call	0x16c	; 0x16c <main>
+  da:	0c 94 c2 00 	jmp	0x184	; 0x184 <_exit>
+
+000000de <__bad_interrupt>:
+  de:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000e2 <relays_init>:
+  e2:	84 b1       	in	r24, 0x04	; 4
+  e4:	87 60       	ori	r24, 0x07	; 7
+  e6:	84 b9       	out	0x04, r24	; 4
+  e8:	85 b1       	in	r24, 0x05	; 5
+  ea:	88 7f       	andi	r24, 0xF8	; 248
+  ec:	85 b9       	out	0x05, r24	; 5
+  ee:	08 95       	ret
+
+000000f0 <trigger_relay>:
+  f0:	95 b1       	in	r25, 0x05	; 5
+  f2:	98 7f       	andi	r25, 0xF8	; 248
+  f4:	95 b9       	out	0x05, r25	; 5
+  f6:	81 30       	cpi	r24, 0x01	; 1
+  f8:	11 f4       	brne	.+4      	; 0xfe <trigger_relay+0xe>
+  fa:	28 9a       	sbi	0x05, 0	; 5
+  fc:	08 95       	ret
+  fe:	82 30       	cpi	r24, 0x02	; 2
+ 100:	11 f4       	brne	.+4      	; 0x106 <trigger_relay+0x16>
+ 102:	29 9a       	sbi	0x05, 1	; 5
+ 104:	08 95       	ret
+ 106:	83 30       	cpi	r24, 0x03	; 3
+ 108:	09 f4       	brne	.+2      	; 0x10c <trigger_relay+0x1c>
+ 10a:	2a 9a       	sbi	0x05, 2	; 5
+ 10c:	08 95       	ret
+
+0000010e <read_microphone>:
+ 10e:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 112:	80 64       	ori	r24, 0x40	; 64
+ 114:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 118:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 11c:	86 fd       	sbrc	r24, 6
+ 11e:	fc cf       	rjmp	.-8      	; 0x118 <read_microphone+0xa>
+ 120:	80 91 78 00 	lds	r24, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7f8078>
+ 124:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 128:	08 95       	ret
+
+0000012a <detect_claps>:
+ 12a:	ec 01       	movw	r28, r24
+ 12c:	0e 94 87 00 	call	0x10e	; 0x10e <read_microphone>
+ 130:	c8 17       	cp	r28, r24
+ 132:	d9 07       	cpc	r29, r25
+ 134:	d8 f7       	brcc	.-10     	; 0x12c <detect_claps+0x2>
+ 136:	2f ef       	ldi	r18, 0xFF	; 255
+ 138:	85 ea       	ldi	r24, 0xA5	; 165
+ 13a:	9e e0       	ldi	r25, 0x0E	; 14
+ 13c:	21 50       	subi	r18, 0x01	; 1
+ 13e:	80 40       	sbci	r24, 0x00	; 0
+ 140:	90 40       	sbci	r25, 0x00	; 0
+ 142:	e1 f7       	brne	.-8      	; 0x13c <detect_claps+0x12>
+ 144:	00 c0       	rjmp	.+0      	; 0x146 <detect_claps+0x1c>
+ 146:	00 00       	nop
+ 148:	0e 94 87 00 	call	0x10e	; 0x10e <read_microphone>
+ 14c:	c8 17       	cp	r28, r24
+ 14e:	d9 07       	cpc	r29, r25
+ 150:	68 f7       	brcc	.-38     	; 0x12c <detect_claps+0x2>
+ 152:	2f ef       	ldi	r18, 0xFF	; 255
+ 154:	85 ea       	ldi	r24, 0xA5	; 165
+ 156:	9e e0       	ldi	r25, 0x0E	; 14
+ 158:	21 50       	subi	r18, 0x01	; 1
+ 15a:	80 40       	sbci	r24, 0x00	; 0
+ 15c:	90 40       	sbci	r25, 0x00	; 0
+ 15e:	e1 f7       	brne	.-8      	; 0x158 <detect_claps+0x2e>
+ 160:	00 c0       	rjmp	.+0      	; 0x162 <detect_claps+0x38>
+ 162:	00 00       	nop
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+ 166:	0e 94 78 00 	call	0xf0	; 0xf0 <trigger_relay>
+ 16a:	e0 cf       	rjmp	.-64     	; 0x12c <detect_claps+0x2>
+
+0000016c <main>:
+ 16c:	0e 94 71 00 	call	0xe2	; 0xe2 <relays_init>
+ 170:	80 e4       	ldi	r24, 0x40	; 64
+ 172:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+ 176:	86 e8       	ldi	r24, 0x86	; 134
+ 178:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 17c:	80 e0       	ldi	r24, 0x00	; 0
+ 17e:	92 e0       	ldi	r25, 0x02	; 2
+ 180:	0e 94 95 00 	call	0x12a	; 0x12a <detect_claps>
+
+00000184 <_exit>:
+ 184:	f8 94       	cli
+
+00000186 <__stop_program>:
+ 186:	ff cf       	rjmp	.-2      	; 0x186 <__stop_program>
