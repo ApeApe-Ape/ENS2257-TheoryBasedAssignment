@@ -1,0 +1,61 @@
+/* Define constants
+.equ RELAY1_PIN = 0          ; Relay connected to PB0
+.equ ADC_THRESHOLD = 512      ; Example threshold value for sound detection
+.equ ADC_CHANNEL = 0          ; Select ADC0 (PC0) for microphone input
+
+; Initialization code
+reset:
+    ldi r16, 0xFF             ; Set Port B as output for relay control
+    out DDRB, r16             ; Set DDRB to output mode for the relay
+    clr r16
+    out PORTB, r16            ; Ensure all relays are off initially (clear PB0)
+
+    ; Initialize ADC
+    ldi r16, (1 << REFS0)     ; Set AVcc as the reference voltage, select ADC0
+    out ADMUX, r16            ; Configure ADMUX register for ADC0 input
+
+    ldi r16, (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1)
+                              ; Enable ADC and set prescaler to 64 (for 8 MHz clock)
+    out ADCSRA, r16           ; Configure ADCSRA register to enable ADC
+
+main_loop:
+    ; Start ADC conversion
+    sbi ADCSRA, ADSC          ; Start ADC conversion by setting ADSC bit
+
+wait_for_conversion:
+    sbis ADCSRA, ADSC         ; Wait until conversion is complete (ADSC becomes 0)
+    rjmp wait_for_conversion  ; Keep waiting until conversion finishes
+
+    ; Read ADC result
+    in r16, ADCL              ; Read low byte of ADC result
+    in r17, ADCH              ; Read high byte of ADC result
+
+    ; Combine high and low byte into a 16-bit value
+    ldi r18, 0                ; Clear r18 for 16-bit comparison
+    lsl r17                   ; Shift high byte left by 8 bits
+    or r16, r17               ; Combine low and high byte
+
+    ; Compare with the threshold
+    ldi r19, low(ADC_THRESHOLD)   ; Load low byte of threshold
+    ldi r20, high(ADC_THRESHOLD)  ; Load high byte of threshold
+    cp r16, r19                ; Compare low byte of ADC result with threshold
+    cpc r17, r20               ; Compare high byte of ADC result with threshold
+
+    brlo no_sound_detected     ; If ADC value is less than the threshold, skip the relay action
+
+    ; Switch on the relay (PB0) if sound level exceeds the threshold
+    sbi PORTB, RELAY1_PIN      ; Set PB0 to turn on relay
+
+no_sound_detected:
+    ; Add a delay to avoid rapid toggling (debouncing)
+    ldi r16, 200               ; Delay counter
+delay_loop:
+    dec r16
+    brne delay_loop            ; Simple delay loop
+
+    ; Turn off relay after a short duration
+    cbi PORTB, RELAY1_PIN      ; Clear PB0 to turn off relay
+
+    rjmp main_loop             ; Repeat the process
+
+*/
